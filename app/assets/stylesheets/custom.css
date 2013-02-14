@@ -2,3 +2,8 @@ body{
   padding-top:60px;
   padding-bottom: 10px;
 }
+
+.navbar .navbar-inner .container .nav .to_right{
+  line-height: 41px;
+  color:white;
+}

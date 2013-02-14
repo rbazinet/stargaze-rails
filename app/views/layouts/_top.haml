@@ -12,12 +12,13 @@
             =link_to "Login", new_user_session_path
           %li
             =link_to "Register", new_user_registration_path
+          %li.to_right
+            FB login
+          %li=link_to "FB", root_url
         -else
           %li
             =link_to "Logout", destroy_user_session_path, :method=>:delete
           %li
             =link_to "Edit Account", edit_user_registration_path
-          %li
-            Welcome 
-            =current_user.email
-            !
+          %li.to_right
+            Welcome #{current_user.email}!
