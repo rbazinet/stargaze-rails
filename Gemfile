@@ -10,7 +10,8 @@ gem 'haml'
 gem 'jquery-rails'
 gem 'thin'
 gem 'devise'
-
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 group :development do
   gem 'better_errors'

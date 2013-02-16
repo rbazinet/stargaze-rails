@@ -1,4 +1,10 @@
-%p.text-error.text-center
+-if alert
+  .alert.alert-error
     %strong=alert
-%p.text-success.text-center
+    %button.close{"data-dismiss" => "alert", :type => "button"}
+      &times;
+-if notice
+  .alert.alert-success
     %strong=notice
+    %button.close{"data-dismiss" => "alert", :type => "button"}
+      &times;

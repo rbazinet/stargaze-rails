@@ -3,7 +3,6 @@
     .container
       = link_to "StarGaze", root_url, :class=>"brand"
       %ul.nav
-        %li.active=link_to "Home", root_url
         %li=link_to "View sky", root_url
         %li=link_to "View solar system", root_url
         %li=link_to "Contact", root_url
@@ -14,11 +13,14 @@
             =link_to "Register", new_user_registration_path
           %li.to_right
             FB login
-          %li=link_to "FB", root_url
+          %li=link_to "FB", user_omniauth_authorize_path(:facebook)
         -else
           %li
             =link_to "Logout", destroy_user_session_path, :method=>:delete
           %li
             =link_to "Edit Account", edit_user_registration_path
           %li.to_right
-            Welcome #{current_user.email}!
+            -if current_user.name?
+              Welcome #{current_user.name}!
+            -else
+              Welcome #{current_user.email}!
