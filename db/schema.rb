@@ -11,7 +11,62 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130216194232) do
+ActiveRecord::Schema.define(:version => 20130217131054) do
+
+  create_table "object_constellation", :force => true do |t|
+    t.string "name",     :null => false
+    t.string "abb1"
+    t.string "abb2"
+    t.string "genitive"
+    t.string "origin"
+    t.string "meaning"
+  end
+
+  create_table "object_messier", :force => true do |t|
+    t.integer "messier_number",     :null => false
+    t.integer "ngc_id"
+    t.string  "common_name"
+    t.string  "object_type"
+    t.float   "distance_kly"
+    t.integer "constellation_id",   :null => false
+    t.float   "apparent_magnitude"
+  end
+
+  create_table "object_ngc", :force => true do |t|
+    t.integer "ngc_number",         :null => false
+    t.string  "names"
+    t.string  "object_type"
+    t.integer "constellation_id",   :null => false
+    t.string  "right_ascension"
+    t.string  "declination"
+    t.float   "apparent_magnitude"
+  end
+
+  create_table "object_solar", :force => true do |t|
+    t.string  "name",           :null => false
+    t.integer "position"
+    t.integer "size"
+    t.float   "size_earth"
+    t.integer "mass"
+    t.float   "mass_earth"
+    t.integer "distance"
+    t.float   "distance_earth"
+    t.float   "orbital_period"
+    t.string  "trading_period"
+    t.integer "moons"
+    t.string  "type"
+    t.text    "info"
+  end
+
+  create_table "object_star", :force => true do |t|
+    t.string  "name"
+    t.integer "constellation_id",   :null => false
+    t.string  "right_ascension"
+    t.string  "declination"
+    t.float   "apparent_magnitude"
+    t.string  "stellar_class"
+    t.text    "info"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
