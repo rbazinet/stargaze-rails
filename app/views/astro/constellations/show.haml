@@ -1,0 +1,158 @@
+%h3
+  =@constellation.name
+.tabbable.tabs-left
+  %ul.nav.nav-tabs
+    %li.active
+      %a{:href=>"#tab1", "data-toggle"=>"tab"}
+        Info
+    %li
+      %a{:href=>"#tab2", "data-toggle"=>"tab"}
+        Stars
+    %li
+      %a{:href=>"#tab3", "data-toggle"=>"tab"}
+        Messier objects
+    %li
+      %a{:href=>"#tab4", "data-toggle"=>"tab"}
+        Ngc catalog
+  .tab-content
+    #tab1.tab-pane.active
+      %strong
+        Constellation name:
+      =@constellation.name
+      %br
+      %strong
+        Abbreviations:
+      =@constellation.abb1
+      =@constellation.abb2
+      %br
+      %strong
+        Genitive:
+      =@constellation.genitive
+      %br
+      %strong
+        Origin:
+      =@constellation.origin
+      %br
+      %strong
+        Name meaning:
+      =@constellation.meaning
+
+
+
+
+
+    #tab2.tab-pane
+      %table.table.table-striped.table-hover
+        %caption
+          %h4
+            List of starts in 
+            =@constellation.name
+        %thead
+          %tr
+            %td
+              %strong
+                Name
+            %td
+              %strong
+                Right Ascension
+            %td
+              %strong
+                Declination
+            %td
+              %strong
+                Apparent magnitude
+            %td
+              %strong
+                Stellar class
+        %tbody
+          -@constellation.stars.each do |c|
+            %tr
+              %td=c.name
+              %td=c.right_ascension
+              %td=c.declination
+              %td=c.apparent_magnitude
+              %td=c.stellar_class
+
+
+
+
+    #tab3.tab-pane
+      %table.table.table-striped.table-hover
+        %caption
+          %h4
+            List of Messier objects in 
+            =@constellation.name
+        %thead
+          %tr
+            %td
+              %strong
+                Messier Number
+            %td
+              %strong
+                Number in NGC
+            %td
+              %strong
+                Common name
+            %td
+              %strong
+                Object type
+            %td
+              %strong
+                Distance in kly
+            %td
+              %strong
+                Apparent magnitude
+        %tbody
+          -@constellation.messiers.each do |c|
+            %tr
+              %td
+                M
+                =c.messier_number
+              %td
+                NGC
+                =c.ngc_number
+              %td=c.common_name
+              %td=c.object_type
+              %td=c.distance_kly
+              %td=c.apparent_magnitude
+
+
+
+    #tab4.tab-pane
+      %table.table.table-striped.table-hover
+        %caption
+          %h4
+            List of NGC catalog objects in 
+            =@constellation.name
+        %thead
+          %tr
+            %td
+              %strong
+                NGC number
+            %td
+              %strong
+                Other names
+            %td
+              %strong
+                Object Type
+            %td
+              %strong
+                Right ascension
+            %td
+              %strong
+                Declination
+            %td
+              %strong
+                Apparent magnitude
+        %tbody
+          -@constellation.ngcs.each do |c|
+            %tr
+              %td
+                NGC
+                =c.ngc_number
+              %td=c.names
+              %td=c.object_type
+              %td=c.right_ascension
+              %td=c.declination
+              %td=c.apparent_magnitude
+      

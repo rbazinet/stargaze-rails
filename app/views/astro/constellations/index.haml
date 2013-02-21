@@ -1,0 +1,40 @@
+%h3
+  List of constellation
+%p.lead
+  Browse list of all 88 night sky constellations, and find the one You were looking at!
+%p
+  After choosing a constellation, click it, to see full list of all major stars, messier and ngc object, and then browse an obserwations for that specific entity, or add your obserwation or astrophotos of it!
+
+%table.table.table-striped.table-hover
+  %caption
+    %h4
+      List of constellations
+  %thead
+    %tr
+      %td
+        %strong
+          Name
+      %td
+        %strong
+          First abbreviation
+      %td
+        %strong
+          Second abbreviation
+      %td
+        %strong
+          Genitive
+      %td
+        %strong
+          Origin
+      %td
+        %strong
+          Name meaning
+  %tbody
+    -@constellations.each do |c|
+      %tr
+        %td=link_to c.name, astro_constellation_path(c.id)
+        %td=c.abb1
+        %td=c.abb2
+        %td=c.genitive
+        %td=c.origin
+        %td=c.meaning
