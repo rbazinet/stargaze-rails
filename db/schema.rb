@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20130217131054) do
 
-  create_table "object_constellation", :force => true do |t|
+  create_table "astro_constellation", :force => true do |t|
     t.string "name",     :null => false
     t.string "abb1"
     t.string "abb2"
@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(:version => 20130217131054) do
     t.string "meaning"
   end
 
-  create_table "object_messier", :force => true do |t|
+  create_table "astro_messier", :force => true do |t|
     t.integer "messier_number",     :null => false
-    t.integer "ngc_id"
+    t.integer "ngc_number"
     t.string  "common_name"
     t.string  "object_type"
     t.float   "distance_kly"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(:version => 20130217131054) do
     t.float   "apparent_magnitude"
   end
 
-  create_table "object_ngc", :force => true do |t|
+  create_table "astro_ngc", :force => true do |t|
     t.integer "ngc_number",         :null => false
     t.string  "names"
     t.string  "object_type"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20130217131054) do
     t.float   "apparent_magnitude"
   end
 
-  create_table "object_solar", :force => true do |t|
+  create_table "astro_solar", :force => true do |t|
     t.string  "name",           :null => false
     t.integer "position"
     t.integer "size"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(:version => 20130217131054) do
     t.text    "info"
   end
 
-  create_table "object_star", :force => true do |t|
+  create_table "astro_star", :force => true do |t|
     t.string  "name"
     t.integer "constellation_id",   :null => false
     t.string  "right_ascension"

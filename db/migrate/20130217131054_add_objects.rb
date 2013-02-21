@@ -11,7 +11,7 @@ class AddObjects < ActiveRecord::Migration
 
     create_table :astro_messier do |t|
       t.integer :messier_number, :null=>false
-      t.integer :ngc_id
+      t.integer :ngc_number
       t.string :common_name
       t.string :object_type
       t.float :distance_kly
