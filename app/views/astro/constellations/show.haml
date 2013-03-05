@@ -1,5 +1,6 @@
 %h3
   =@constellation.name
+%hr
 .tabbable.tabs-left
   %ul.nav.nav-tabs
     %li.active
@@ -16,26 +17,30 @@
         Ngc catalog
   .tab-content
     #tab1.tab-pane.active
-      %strong
-        Constellation name:
-      =@constellation.name
-      %br
-      %strong
-        Abbreviations:
-      =@constellation.abb1
-      =@constellation.abb2
-      %br
-      %strong
-        Genitive:
-      =@constellation.genitive
-      %br
-      %strong
-        Origin:
-      =@constellation.origin
-      %br
-      %strong
-        Name meaning:
-      =@constellation.meaning
+      .row-fluid
+        .span4
+          %strong
+            Constellation name:
+          =@constellation.name
+          %br
+          %strong
+            Abbreviations:
+          =@constellation.abb1
+          =@constellation.abb2
+          %br
+          %strong
+            Genitive:
+          =@constellation.genitive
+          %br
+          %strong
+            Origin:
+          =@constellation.origin
+          %br
+          %strong
+            Name meaning:
+          =@constellation.meaning
+        .span8
+          PHOTOS
 
 
 
@@ -67,7 +72,10 @@
         %tbody
           -@constellation.stars.each do |c|
             %tr
-              %td=c.name
+              -if c.name and not c.name==""
+                %td=link_to c.name, astro_star_path(c.id)
+              -else
+                %td=link_to "Unnamed star", astro_star_path(c.id)
               %td=c.right_ascension
               %td=c.declination
               %td=c.apparent_magnitude
@@ -106,8 +114,7 @@
           -@constellation.messiers.each do |c|
             %tr
               %td
-                M
-                =c.messier_number
+                =link_to "M#{c.messier_number}", astro_messier_path(c.id)
               %td
                 NGC
                 =c.ngc_number
@@ -147,9 +154,7 @@
         %tbody
           -@constellation.ngcs.each do |c|
             %tr
-              %td
-                NGC
-                =c.ngc_number
+              %td=link_to "NGC #{c.ngc_number}", astro_ngc_path(c.id)
               %td=c.names
               %td=c.object_type
               %td=c.right_ascension

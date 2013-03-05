@@ -1,0 +1,31 @@
+%h3
+  ="M#{@messier.messier_number} in #{@messier.constellation.name}"
+%hr
+.row
+  .span4
+    %p
+      %strong
+        Name:
+      ="M#{@messier.messier_number}"
+    %p
+      %strong
+        Number in NGC catalog:
+      ="NGC #{@messier.ngc_number}"
+    %p
+      %strong
+        Common name:
+      =@messier.common_name
+    %p
+      %strong
+        Object type:
+      =@messier.object_type
+    %p
+      %strong
+        Distance in kly from Earth:
+      =@messier.distance_kly
+    %p
+      %strong
+        Apparent magnitude:
+      =@messier.apparent_magnitude
+  .span8
+    PHOTOS

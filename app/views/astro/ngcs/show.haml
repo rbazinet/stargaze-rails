@@ -1,0 +1,31 @@
+%h3
+  ="NGC #{@ngc.ngc_number} in #{@ngc.constellation.name}"
+%hr
+.row
+  .span4
+    %p
+      %strong
+        Name:
+      ="NGC #{@ngc.ngc_number}"
+    %p
+      %strong
+        Other names:
+      =@ngc.names
+    %p
+      %strong
+        Object type:
+      =@ngc.object_type
+    %p
+      %strong
+        Right ascension:
+      =@ngc.right_ascension
+    %p
+      %strong
+        Declination:
+      =@ngc.declination
+    %p
+      %strong
+        Apparent magnitude:
+      =@ngc.apparent_magnitude
+  .span8
+    PHOTOS

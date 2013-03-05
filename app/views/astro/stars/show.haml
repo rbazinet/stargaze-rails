@@ -1,0 +1,30 @@
+%h3
+  -if @star.name and not @star.name==""
+    ="#{@star.name} in #{@star.constellation.name}"
+  -else
+    ="Unnamed Star in #{@star.constellation.name}"
+%hr
+.row
+  .span4
+    %p
+      %strong
+        Name:
+      =@star.name
+    %p
+      %strong
+        Right ascension:
+      =@star.right_ascension
+    %p
+      %strong
+        Declination:
+      =@star.declination
+    %p
+      %strong
+        Apparent magnitude:
+      =@star.apparent_magnitude
+    %p
+      %strong
+        Stellar class:
+      =@star.stellar_class
+  .span8
+    PHOTOS
