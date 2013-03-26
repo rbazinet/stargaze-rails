@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130217131054) do
+ActiveRecord::Schema.define(:version => 20130305084356) do
 
   create_table "astro_constellation", :force => true do |t|
     t.string "name",     :null => false
@@ -66,6 +66,17 @@ ActiveRecord::Schema.define(:version => 20130217131054) do
     t.float   "apparent_magnitude"
     t.string  "stellar_class"
     t.text    "info"
+  end
+
+  create_table "user_observation", :force => true do |t|
+    t.integer "user_id",           :null => false
+    t.integer "astro_object_id",   :null => false
+    t.string  "astro_object_type", :null => false
+    t.string  "name",              :null => false
+    t.string  "description"
+    t.string  "eq_used"
+    t.string  "conditions"
+    t.date    "observation_date"
   end
 
   create_table "users", :force => true do |t|

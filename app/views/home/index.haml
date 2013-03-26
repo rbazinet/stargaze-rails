@@ -1,1 +1,50 @@
-home site
+.row
+  %h1.center Stargaze
+  %h3.center Bring your astro observations to higher level!
+  %hr
+  .slider
+    #myCarousel.carousel.slide
+      %ol.carousel-indicators
+        %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+        %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+        %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+      .carousel-inner
+        .active.item
+          =image_tag 'space3.jpg'
+          .carousel-caption
+            %h4 Browse
+            %p Find the object you were looking at during your night sky observations.
+        .item
+          =image_tag 'space4.jpg'
+          .carousel-caption
+            %h4 Share
+            %p Share your opinion and photos.
+        .item
+          =image_tag 'mountainsky.jpg'
+          .carousel-caption
+            %h4 Talk
+            %p Join growing and active community of amateur astrophotographs.
+      %a.carousel-control.left{"data-slide" => "prev", :href => "#myCarousel"} ‹
+      %a.carousel-control.right{"data-slide" => "next", :href => "#myCarousel"} ›
+.row
+  %hr
+  .span4
+    %h4.center Discover beauty of space
+    %p.nice
+      Are You an astronomy lover amazed by the beauty of space, astrophotographer or mayby You just want o learn a little bit about object You see above your head every night? Use our database of constellations, stars, and deep sky object in Messier and NGC catalog. Share your photos of these object and join conversation with other observers from all over the world. 
+      =link_to "Start sharing and browsing right now!", astro_constellations_path
+  .span4    
+    %h4.center Explore our neighbourhood
+    %p.nice
+      Find out more about our solar system, sharing, talking and watching amateur taken photos and observations of Sun, Moon and other planets in our own space neighbourhood. Get into the action of fascinating events, such as planet transits, eclipses, different moon phases or asteroids and comets activity monitoring.
+      =link_to "Visit solar system as seen by other people, just like You!", astro_constellations_path
+  .span4
+    %h4.center Join and talk
+    %p.nice
+      There are people like You around the globe! Share and learn together with them. 
+      =link_to "Join the community in just a few seconds!", new_user_session_path
+
+:javascript
+  $('.carousel').carousel({
+    interval: 4000
+  })

@@ -7,3 +7,16 @@ body{
   line-height: 41px;
   color:white;
 }
+
+.slider{
+  margin-left:45px;
+  width:870px;
+}
+
+.center{
+  text-align: center;
+}
+
+.nice{
+  text-align: justify;
+}

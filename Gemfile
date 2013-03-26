@@ -12,6 +12,7 @@ gem 'thin'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'paperclip', "~> 3.0"
 
 group :development do
   gem 'better_errors'

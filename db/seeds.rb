@@ -193,3 +193,147 @@ open("http://en.wikipedia.org/w/api.php?format=xml&action=parse&page=List_of_Mes
    end
 end
 
+puts "Solar system"
+  puts "  sun"
+  a=Astro::Solar.new
+  a.name=
+  a.position=
+  a.size=
+  a.size_earth=
+  a.mass=
+  a.mass_earth=
+  a.distance=
+  a.distance_earth=
+  a.orbital_period=
+  a.trading_period=
+  a.moons=
+  a.type=
+  a.info=
+
+  puts "  mercury"
+  a=Astro::Solar.new
+  a.name=
+  a.position=
+  a.size=
+  a.size_earth=
+  a.mass=
+  a.mass_earth=
+  a.distance=
+  a.distance_earth=
+  a.orbital_period=
+  a.trading_period=
+  a.moons=
+  a.type=
+  a.info=
+
+  puts "  wenus"
+  a=Astro::Solar.new
+  a.name=
+  a.position=
+  a.size=
+  a.size_earth=
+  a.mass=
+  a.mass_earth=
+  a.distance=
+  a.distance_earth=
+  a.orbital_period=
+  a.trading_period=
+  a.moons=
+  a.type=
+  a.info=
+
+  puts "  earth"
+  a=Astro::Solar.new
+  a.name=
+  a.position=
+  a.size=
+  a.size_earth=
+  a.mass=
+  a.mass_earth=
+  a.distance=
+  a.distance_earth=
+  a.orbital_period=
+  a.trading_period=
+  a.moons=
+  a.type=
+  a.info=
+
+puts "  mars"
+  a=Astro::Solar.new
+  a.name=
+  a.position=
+  a.size=
+  a.size_earth=
+  a.mass=
+  a.mass_earth=
+  a.distance=
+  a.distance_earth=
+  a.orbital_period=
+  a.trading_period=
+  a.moons=
+  a.type=
+  a.info=
+
+puts "  jupiter"
+  a=Astro::Solar.new
+  a.name=
+  a.position=
+  a.size=
+  a.size_earth=
+  a.mass=
+  a.mass_earth=
+  a.distance=
+  a.distance_earth=
+  a.orbital_period=
+  a.trading_period=
+  a.moons=
+  a.type=
+  a.info=
+
+  puts "  saturn"
+  a=Astro::Solar.new
+  a.name=
+  a.position=
+  a.size=
+  a.size_earth=
+  a.mass=
+  a.mass_earth=
+  a.distance=
+  a.distance_earth=
+  a.orbital_period=
+  a.trading_period=
+  a.moons=
+  a.type=
+  a.info=
+
+  puts "  uranus"
+  a=Astro::Solar.new
+  a.name=
+  a.position=
+  a.size=
+  a.size_earth=
+  a.mass=
+  a.mass_earth=
+  a.distance=
+  a.distance_earth=
+  a.orbital_period=
+  a.trading_period=
+  a.moons=
+  a.type=
+  a.info=
+
+  puts "  neptune"
+  a=Astro::Solar.new
+  a.name=
+  a.position=
+  a.size=
+  a.size_earth=
+  a.mass=
+  a.mass_earth=
+  a.distance=
+  a.distance_earth=
+  a.orbital_period=
+  a.trading_period=
+  a.moons=
+  a.type=
+  a.info=
