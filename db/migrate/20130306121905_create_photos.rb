@@ -8,7 +8,7 @@ class CreatePhotos < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_attachment :photos, :payload
+    add_attachment :user_photo, :payload
   end
 
   def down

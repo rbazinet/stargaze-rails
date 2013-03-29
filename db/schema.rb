@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130305084356) do
+ActiveRecord::Schema.define(:version => 20130306121905) do
 
   create_table "astro_constellation", :force => true do |t|
     t.string "name",     :null => false
@@ -77,6 +77,19 @@ ActiveRecord::Schema.define(:version => 20130305084356) do
     t.string  "eq_used"
     t.string  "conditions"
     t.date    "observation_date"
+  end
+
+  create_table "user_photo", :force => true do |t|
+    t.integer  "user_id",              :null => false
+    t.integer  "observation_id",       :null => false
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "payload_file_name"
+    t.string   "payload_content_type"
+    t.integer  "payload_file_size"
+    t.datetime "payload_updated_at"
   end
 
   create_table "users", :force => true do |t|
