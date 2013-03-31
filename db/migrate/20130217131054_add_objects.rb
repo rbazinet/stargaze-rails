@@ -51,7 +51,7 @@ class AddObjects < ActiveRecord::Migration
       t.float :orbital_period
       t.string :trading_period
       t.integer :moons
-      t.string :type
+      t.string :solar_type
       t.text :info
     end
 

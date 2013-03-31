@@ -7,6 +7,7 @@ StargazeRails::Application.routes.draw do
     resources :messiers, :only=>[:show]
     resources :ngcs, :only=>[:show]
     resources :stars, :only=>[:show]
+    resources :solars, :only=>[:index, :show]
   end
 
   root :to => 'home#index'

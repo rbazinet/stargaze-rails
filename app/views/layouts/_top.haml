@@ -4,7 +4,7 @@
       = link_to "StarGaze", root_url, :class=>"brand"
       %ul.nav
         %li=link_to "View sky", astro_constellations_path
-        %li=link_to "View solar system", root_url
+        %li=link_to "View solar system", astro_solars_path
         %li=link_to "Contact", root_url
         -unless current_user
           %li

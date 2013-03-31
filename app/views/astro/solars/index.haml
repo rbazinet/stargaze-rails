@@ -1,0 +1,41 @@
+%h3
+  List of solar system objects
+%hr
+%p.lead
+  Browse list of solar system objects, and find the one You were looking at!
+%p
+  After choosing an object, click it, to see information about it and then browse an obserwations for that specific entity, or add your observation or astrophotos of it!
+
+%table.table.table-striped.table-hover
+  %caption
+    %h4
+      List of solar objects
+  %thead
+    %tr
+      %td
+        %strong
+          Name
+      %td
+        %strong
+          Earth sizes
+      %td
+        %strong
+          Earth masses
+      %td
+        %strong
+          Distance from Sun (AU)
+      %td
+        %strong
+          Moons
+      %td
+        %strong
+          Type
+  %tbody
+    -@solars.each do |c|
+      %tr
+        %td=link_to c.name, astro_solar_path(c.id)
+        %td=c.size_earth
+        %td=c.mass_earth
+        %td=c.distance_earth
+        %td=c.moons
+        %td=c.solar_type
