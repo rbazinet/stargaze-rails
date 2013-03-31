@@ -7,6 +7,7 @@ resources:
 
   images:
     Images on carousel are from http://studentweb.ewu.edu/Clarkin/378/project1/ naturephotos project
+    FB login button taken from http://www.tutoriallounge.com/2011/12/how-to-create-ecards-themed-website-design-using-photoshop-cs5/ tutorial
 
   gems and modules:
     Devise with omniauth,

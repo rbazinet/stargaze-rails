@@ -3,8 +3,6 @@ class CreatePhotos < ActiveRecord::Migration
     create_table :user_photo do |t|  
       t.integer :user_id, :null=>false
       t.integer :observation_id, :null=>false
-      t.string :name
-      t.string :description
       t.timestamps
     end
 

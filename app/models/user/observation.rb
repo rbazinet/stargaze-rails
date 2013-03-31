@@ -3,7 +3,7 @@ module User
     set_table_name 'user_observation'
 
     belongs_to :user, :class_name => "User"
-    belongs_to :astro_object, :class_name => "Astro::AstroObject", :polymorphic => true
+    belongs_to :observable, :polymorphic => true
     has_many :photos, :class_name => "User::Photo"
 
     validates :user_id, :description, :eq_used, :observation_date, :conditions, :name, :presence=>true

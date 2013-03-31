@@ -69,21 +69,21 @@ ActiveRecord::Schema.define(:version => 20130306121905) do
   end
 
   create_table "user_observation", :force => true do |t|
-    t.integer "user_id",           :null => false
-    t.integer "astro_object_id",   :null => false
-    t.string  "astro_object_type", :null => false
-    t.string  "name",              :null => false
-    t.string  "description"
-    t.string  "eq_used"
-    t.string  "conditions"
-    t.date    "observation_date"
+    t.integer  "user_id",          :null => false
+    t.string   "name",             :null => false
+    t.string   "description"
+    t.string   "eq_used"
+    t.string   "conditions"
+    t.date     "observation_date"
+    t.integer  "observable_id"
+    t.string   "observable_type"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "user_photo", :force => true do |t|
     t.integer  "user_id",              :null => false
     t.integer  "observation_id",       :null => false
-    t.string   "name"
-    t.string   "description"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
     t.string   "payload_file_name"

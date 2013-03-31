@@ -20,3 +20,7 @@ body{
 .justify{
   text-align: justify;
 }
+
+.separator{
+  margin: 0 10px
+}

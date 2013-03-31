@@ -10,5 +10,6 @@ StargazeRails::Application.routes.draw do
     resources :solars, :only=>[:index, :show]
   end
 
+  match "/info", :to =>"home#info"
   root :to => 'home#index'
 end
