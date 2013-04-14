@@ -1,5 +1,7 @@
 StargazeRails::Application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   namespace :astro do
@@ -8,6 +10,10 @@ StargazeRails::Application.routes.draw do
     resources :ngcs, :only=>[:show]
     resources :stars, :only=>[:show]
     resources :solars, :only=>[:index, :show]
+  end
+
+  namespace :addable do
+    resources :observations
   end
 
   match "/info", :to =>"home#info"

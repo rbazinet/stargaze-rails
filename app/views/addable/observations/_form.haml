@@ -1,0 +1,34 @@
+=form_for @observation do |f|
+  -if @observation.errors.any?
+    .alert.alert-error
+      %ul
+        -@observation.errors.full_messages.each do |m|
+          %li=m
+  %fieldset
+    %legend Observation data
+    =f.label :name, 'Name'
+    =f.text_field :name
+    %br
+    =f.label :description, 'Description'
+    =f.cktext_area :description, :ckeditor => {:toolbar => [['SpellChecker', 'Scayt'],['Find','Replace'],['Bold','Italic','Underline','-','Subscript','Superscript'],['NumberedList','BulletedList','Blockquote'],['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],['Link','Unlink'],['Smiley','SpecialChar'],'/',['Styles','Format','Font','FontSize'],['TextColor','BGColor']]}
+    %br
+    =f.label :eq_used, 'Equipment used'
+    =f.cktext_area :eq_used, :ckeditor => {:toolbar => [['SpellChecker', 'Scayt'],['Find','Replace'],['Bold','Italic','Underline','-','Subscript','Superscript'],['NumberedList','BulletedList','Blockquote'],['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],['Link','Unlink'],['Smiley','SpecialChar'],'/',['Styles','Format','Font','FontSize'],['TextColor','BGColor']]}
+    %br
+    =f.label :conditions, 'Conditions'
+    =f.cktext_area :conditions, :ckeditor => {:toolbar => [['SpellChecker', 'Scayt'],['Find','Replace'],['Bold','Italic','Underline','-','Subscript','Superscript'],['NumberedList','BulletedList','Blockquote'],['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],['Link','Unlink'],['Smiley','SpecialChar'],'/',['Styles','Format','Font','FontSize'],['TextColor','BGColor']]}
+    %br
+    =f.label :observation_date, 'Observation date'
+    =f.text_field :observation_date, :class => 'datepicker', :placeholder => 'dd-mm-rrrr'
+    = hidden_field_tag :observable_type, @observable.class
+    = hidden_field_tag :observable_id, @observable.id
+  .form-buttons
+    = f.submit 'Zapisz', :class => "btn btn-primary"
+
+:javascript
+  $(document).ready(function(){    
+    $('.datepicker').datepicker({
+      format: 'dd-mm-yyyy',
+      language: 'pl'
+    });
+  });

@@ -1,0 +1,21 @@
+%h1 
+  =@observation.name
+  \- observation of
+  =@name
+%hr
+
+.muted Observed on:
+.obs=@observation.observation_date
+%br
+
+.muted Description:
+.obs
+  =raw @observation.description
+
+.muted Equipement used:
+.obs=raw @observation.eq_used
+
+.muted Conditions:
+.obs=raw @observation.conditions
+
+=link_to "Back to "+@name, @observable, :class=>'btn'

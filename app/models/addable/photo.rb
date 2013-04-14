@@ -1,4 +1,4 @@
-module User
+module Addable
   class Photo < ActiveRecord::Base
     set_table_name 'user_photo'
 

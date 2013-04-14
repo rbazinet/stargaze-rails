@@ -4,7 +4,7 @@ module Astro
 
     belongs_to :constellation, :class_name => "Astro::Constellation"
 
-    has_many :observations, :as=>:observable
+    has_many :observations, :as=>:observable, :class_name=>"Addable::Observation"
     has_many :photos, :through=>:observations
   end
 end

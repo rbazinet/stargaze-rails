@@ -6,7 +6,7 @@ module Astro
     has_many :messiers, :class_name => "Astro::Messier"
     has_many :ngcs, :class_name => "Astro::Ngc"
 
-    has_many :observations, :as=>:observable
+    has_many :observations, :as=>:observable, :class_name=>"Addable::Observation"
     has_many :photos, :through=>:observations
 
     validate :name, :uniqueness=>true

@@ -15,6 +15,9 @@
     %li
       %a{:href=>"#tab4", "data-toggle"=>"tab"}
         Ngc catalog
+    %li
+      %a{:href=>"#tab5", "data-toggle"=>"tab"}
+        Observations
   .tab-content
     #tab1.tab-pane.active
       .row-fluid
@@ -161,3 +164,30 @@
               %td=c.declination
               %td=c.apparent_magnitude
       
+
+    #tab5.tab-pane
+      %table.table.table-striped.table-hover
+        %caption
+          %h4
+            List of observations of
+            =@constellation.name
+        %thead
+          %tr
+            %td 
+              %strong User
+            %td 
+              %strong Name
+            %td 
+              %strong Date
+        %tbody
+          -@constellation.observations.each do |o|
+            %tr
+              -if o.user.name? 
+                %td=o.user.name
+              -else
+                %td=o.user.email
+              %td=link_to o.name, addable_observation_path(o.id)
+              %td=o.observation_date
+      %hr
+        -if current_user
+          =link_to "Add observation", new_addable_observation_path(:observable_id=>@constellation, :observable_type=>@constellation.class), :class=>'btn'

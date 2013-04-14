@@ -29,3 +29,31 @@
       =@ngc.apparent_magnitude
   .span8
     PHOTOS
+.row
+  .span12
+    %table.table.table-striped.table-hover
+      %caption
+        %h4
+          List of observations of NGC
+          =@ngc.ngc_number
+      %thead
+        %tr
+          %td 
+            %strong User
+          %td 
+            %strong Name
+          %td 
+            %strong Date
+      %tbody
+        -@ngc.observations.each do |o|
+          %tr
+            -if o.user.name? 
+              %td=o.user.name
+            -else
+              %td=o.user.email
+            %td=link_to o.name, addable_observation_path(o.id)
+            %td=o.observation_date
+    %hr
+      -if current_user
+        =link_to "Add observation", new_addable_observation_path(:observable_id=>@ngc, :observable_type=>@ngc.class), :class=>'btn'
+      =link_to "Back to "+@ngc.constellation.name, @ngc.constellation, :class=>'btn'
