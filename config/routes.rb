@@ -1,6 +1,4 @@
 StargazeRails::Application.routes.draw do
-  
-  mount Ckeditor::Engine => '/ckeditor'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
