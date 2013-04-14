@@ -13,6 +13,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'paperclip', "~> 3.0"
+gem 'ckeditor'
 
 group :development do
   gem 'better_errors'
