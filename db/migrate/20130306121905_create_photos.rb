@@ -1,8 +1,7 @@
 class CreatePhotos < ActiveRecord::Migration
   def up
     create_table :user_photo do |t|  
-      t.integer :user_id, :null=>false
-      t.integer :observation_id, :null=>false
+      t.integer :observation_id
       t.timestamps
     end
 

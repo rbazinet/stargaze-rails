@@ -16,6 +16,7 @@ module Addable
     end
 
     def create
+      puts params
       @observation=@observable.observations.new(params[:addable_observation])
       @observation.user=current_user
       if @observation.save

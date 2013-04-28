@@ -112,8 +112,7 @@ ActiveRecord::Schema.define(:version => 20130428182711) do
   end
 
   create_table "user_photo", :force => true do |t|
-    t.integer  "user_id",              :null => false
-    t.integer  "observation_id",       :null => false
+    t.integer  "observation_id"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
     t.string   "payload_file_name"

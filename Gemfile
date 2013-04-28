@@ -16,6 +16,7 @@ gem 'paperclip', "~> 3.0"
 gem 'ckeditor'
 gem 'acts_as_commentable', '3.0.1'
 gem 'acts_as_votable', '~> 0.5.0'
+gem 'plupload-rails3'
 
 group :development do
   gem 'better_errors'

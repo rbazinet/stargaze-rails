@@ -21,5 +21,8 @@ StargazeRails::Application.routes.draw do
   match "/info",                  :to =>"home#info"
   match "/votes/add_to_fav",      :to =>"votes#add_to_fav"
   match "/votes/remove_from_fav", :to =>"votes#remove_from_fav"
+
+  match 'plupload_rails/_plupload_uploader', :controller=>'plupload_rails', :action=>'_plupload_uploader', :as=>'pluploader'
+  
   root :to => 'home#index'
 end

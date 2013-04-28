@@ -18,6 +18,10 @@
 .muted Conditions:
 .obs=raw @observation.conditions
 
+.muted Photos:
+-@observation.photos.each do |p|
+  .obs=image_tag p.payload.url(:thumb)
+
 =link_to "Back to "+@name, @observable, :class=>'btn'
 
 =render 'shared/comments', :commentable=>@observation
