@@ -2,6 +2,8 @@ module Addable
   class Photo < ActiveRecord::Base
     set_table_name 'user_photo'
 
+    acts_as_commentable
+
     belongs_to :user, :class_name => "User"
     belongs_to :observation, :class_name => "User::Observation"
 

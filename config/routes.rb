@@ -16,6 +16,8 @@ StargazeRails::Application.routes.draw do
     resources :observations
   end
 
+  resources :comments
+
   match "/info", :to =>"home#info"
   root :to => 'home#index'
 end

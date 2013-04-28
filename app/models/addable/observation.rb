@@ -2,6 +2,8 @@ module Addable
   class Observation < ActiveRecord::Base
     set_table_name 'user_observation'
 
+    acts_as_commentable
+
     belongs_to :user, :class_name => "User"
     belongs_to :observable, :polymorphic => true
     has_many :photos, :class_name => "User::Photo"

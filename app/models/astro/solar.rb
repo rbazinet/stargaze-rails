@@ -1,6 +1,8 @@
 module Astro
   class Solar < ActiveRecord::Base
     set_table_name 'astro_solar'
+
+    acts_as_commentable
     
     has_many :observations, :as=>:observable, :class_name=>"Addable::Observation"
     has_many :photos, :through=>:observations

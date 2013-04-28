@@ -56,3 +56,7 @@
       -if current_user
         =link_to "Add observation", new_addable_observation_path(:observable_id=>@star, :observable_type=>@star.class), :class=>'btn'
       =link_to "Back to "+@star.constellation.name, @star.constellation, :class=>'btn'
+
+%hr
+.row
+  .span12=render 'shared/comments', :commentable=>@star

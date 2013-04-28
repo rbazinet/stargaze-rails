@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
   has_many :observations, :class_name=>"User::Observation"
   has_many :photos, :class_name=>"User::Photos", :through=>:observations
+  has_many :comments, :class_name=>"Comment"
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
@@ -30,6 +31,14 @@ class User < ActiveRecord::Base
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
         user.email = data["email"] if user.email.blank?
       end
+    end
+  end
+
+  def get_name
+    if self.name
+      self.name
+    else
+      self.email
     end
   end
 

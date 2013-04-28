@@ -27,7 +27,6 @@ module Addable
 
     private
       def load_observable
-        puts params
         @observable=params[:observable_type].constantize.find(params[:observable_id])
         get_name
       end
