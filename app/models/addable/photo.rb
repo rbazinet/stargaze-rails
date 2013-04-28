@@ -3,6 +3,7 @@ module Addable
     set_table_name 'user_photo'
 
     acts_as_commentable
+    acts_as_votable
 
     belongs_to :user, :class_name => "User"
     belongs_to :observation, :class_name => "User::Observation"

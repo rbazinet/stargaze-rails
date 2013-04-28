@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   has_many :photos, :class_name=>"User::Photos", :through=>:observations
   has_many :comments, :class_name=>"Comment"
 
+  acts_as_voter
+
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     unless user

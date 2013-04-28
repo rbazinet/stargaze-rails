@@ -1,3 +1,4 @@
+-@votable=@constellation
 %h3
   =@constellation.name
 %hr
@@ -46,7 +47,8 @@
           PHOTOS
       %hr
       =render 'shared/comments', :commentable=>@constellation
-
+      #votes=render 'shared/favs' , :votable=>@constellation
+      
     #tab2.tab-pane
       %table.table.table-striped.table-hover
         %caption

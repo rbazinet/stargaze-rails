@@ -3,6 +3,7 @@ module Astro
     set_table_name 'astro_solar'
 
     acts_as_commentable
+    acts_as_votable
     
     has_many :observations, :as=>:observable, :class_name=>"Addable::Observation"
     has_many :photos, :through=>:observations

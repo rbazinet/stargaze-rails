@@ -3,6 +3,7 @@ module Astro
     set_table_name 'astro_messier'
 
     acts_as_commentable
+    acts_as_votable
 
     belongs_to :constellation, :class_name => "Astro::Constellation"
 

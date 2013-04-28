@@ -1,0 +1,14 @@
+-if current_user
+  -if current_user.voted_as_when_voted_for(@votable)==true
+    =link_to "Remove from favourites", votes_remove_from_fav_path(:votable_type=>@votable.class, :votable_id=>@votable.id), :class=>"btn", :remote=>true, :id=>'vote_trigger'
+  -else
+    =link_to "Add to favourites", votes_add_to_fav_path(:votable_type=>@votable.class, :votable_id=>@votable.id), :class=>"btn", :remote=>true, :id=>'vote_trigger'
+
+:javascript
+  $(document).ready(
+    function(){
+      $('#vote_trigger').bind('ajax:complete', function(evt, data, status, xhr){
+          $('#votes').html(data.responseText);
+        });
+    }
+  );

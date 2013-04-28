@@ -18,6 +18,8 @@ StargazeRails::Application.routes.draw do
 
   resources :comments
 
-  match "/info", :to =>"home#info"
+  match "/info",                  :to =>"home#info"
+  match "/votes/add_to_fav",      :to =>"votes#add_to_fav"
+  match "/votes/remove_from_fav", :to =>"votes#remove_from_fav"
   root :to => 'home#index'
 end
