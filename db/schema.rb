@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(:version => 20130428182711) do
     t.float   "size_earth"
     t.integer "mass"
     t.float   "mass_earth"
-    t.integer "distance"
+    t.string  "distance"
     t.float   "distance_earth"
     t.float   "orbital_period"
     t.string  "trading_period"

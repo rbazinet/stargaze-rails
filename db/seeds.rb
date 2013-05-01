@@ -206,7 +206,7 @@ puts "Solar system"
   a.size_earth=109
   a.mass=1989100000
   a.mass_earth=332950
-  a.distance=0
+  a.distance="0"
   a.distance_earth=0
   a.orbital_period="0"
   a.trading_period="25d 9h 7m"
@@ -223,7 +223,7 @@ puts "Solar system"
   a.size_earth=0.3825
   a.mass=330.2
   a.mass_earth=0.0552
-  a.distance=57909170
+  a.distance="57909170"
   a.distance_earth=0.3871
   a.orbital_period=87.969
   a.trading_period="58d 15h 26m"  
@@ -240,7 +240,7 @@ puts "Solar system"
   a.size_earth=0.9489
   a.mass=4868.5
   a.mass_earth=0.8149
-  a.distance=108208926
+  a.distance="108208926"
   a.distance_earth=0.7233
   a.orbital_period=224.701
   a.trading_period="243d 0h 27m"
@@ -257,7 +257,7 @@ puts "Solar system"
   a.size_earth=1
   a.mass=5974.2
   a.mass_earth=1
-  a.distance=149597887
+  a.distance="149597887"
   a.distance_earth=1
   a.orbital_period=365.256
   a.trading_period="23h 56m 04s"
@@ -274,7 +274,7 @@ puts "  mars"
   a.size_earth=0.5335 
   a.mass=641.9
   a.mass_earth=0.1074
-  a.distance=227936637
+  a.distance="227936637"
   a.distance_earth=1.5237
   a.orbital_period=686.960
   a.trading_period="24h 37m 23s"
@@ -291,7 +291,7 @@ puts "  jupiter"
   a.size_earth=11.2092
   a.mass=1898600.8
   a.mass_earth=317.8
-  a.distance=778412027
+  a.distance="778412027"
   a.distance_earth=5.2034
   a.orbital_period=4333.287
   a.trading_period="9h55m30s"
@@ -308,7 +308,7 @@ puts "  jupiter"
   a.size_earth=9.4494
   a.mass=568516.8
   a.mass_earth=95.1620
-  a.distance=1426725413
+  a.distance="1426725413"
   a.distance_earth=9.5371
   a.orbital_period=10756.200
   a.trading_period="10h 39m 22s"
@@ -325,7 +325,7 @@ puts "  jupiter"
   a.size_earth=4.0074 
   a.mass=86841.0
   a.mass_earth=14.5360
-  a.distance=2870972220
+  a.distance="2870972220"
   a.distance_earth=19.1913
   a.orbital_period=30707.490
   a.trading_period="17h 14m 24s"
@@ -342,7 +342,7 @@ puts "  jupiter"
   a.size_earth=3.8827
   a.mass=102439.6
   a.mass_earth=17.1470
-  a.distance=4498252900
+  a.distance="4498252900"
   a.distance_earth=30.0690  
   a.orbital_period=60223.353
   a.trading_period="16h 06m 36s"
