@@ -63,6 +63,7 @@ PHOTOS
     %hr
       -if current_user
         =link_to "Add observation", new_addable_observation_path(:observable_id=>@solar, :observable_type=>@solar.class), :class=>'btn'
+        #votes=render 'shared/favs'
 
 %hr
 .row

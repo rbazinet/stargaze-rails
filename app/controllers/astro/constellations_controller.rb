@@ -7,6 +7,7 @@ module Astro
     end
     def show
       @constellation=Astro::Constellation.find(params[:id])
+      @votable=@constellation
     end
   end
 end

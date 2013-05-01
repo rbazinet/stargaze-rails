@@ -56,6 +56,7 @@
     %hr
       -if current_user
         =link_to "Add observation", new_addable_observation_path(:observable_id=>@ngc, :observable_type=>@ngc.class), :class=>'btn'
+        #votes=render 'shared/favs'
       =link_to "Back to "+@ngc.constellation.name, @ngc.constellation, :class=>'btn'
 
 %hr

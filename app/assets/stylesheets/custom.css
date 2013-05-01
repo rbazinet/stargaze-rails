@@ -28,3 +28,18 @@ body{
 .obs{
   margin-left:20px;
 }
+
+.obs_images{
+  height: 80px;
+}
+
+.obs_img{
+  margin-right:20px;
+  float:left;
+  width:80px;
+  height:80px;
+}
+
+.modal_img{
+  text-align: center;
+}

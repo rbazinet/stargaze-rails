@@ -1,4 +1,3 @@
--@votable=@constellation
 %h3
   =@constellation.name
 %hr
@@ -44,10 +43,18 @@
             Name meaning:
           =@constellation.meaning
         .span8
-          PHOTOS
+          .obs.obs_images
+            -@constellation.photos.first(4) do |p|
+              .obs_img
+                =link_to image_tag(p.payload.url(:thumb), :class=>'img-polaroid'), "#p-#{p.id}", :role=>"button", "data-toggle"=>"modal"
+                .modal.hide.fade{:id=>"p-#{p.id}", :tabindex=>"-1", :role=>"dialog", "aria-labelledby"=>"p-#{p.id}Label", "aria-hidden"=>"true"}
+                  .modal-header
+                    .modal_img
+                      =image_tag p.payload.url            
+
       %hr
       =render 'shared/comments', :commentable=>@constellation
-      #votes=render 'shared/favs' , :votable=>@constellation
+      #votes=render 'shared/favs'
       
     #tab2.tab-pane
       %table.table.table-striped.table-hover

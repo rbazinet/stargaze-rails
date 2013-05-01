@@ -19,8 +19,15 @@
 .obs=raw @observation.conditions
 
 .muted Photos:
--@observation.photos.each do |p|
-  .obs=image_tag p.payload.url(:thumb)
+.obs.obs_images
+  -@observation.photos.each do |p|
+    .obs_img
+      =link_to image_tag(p.payload.url(:thumb), :class=>'img-polaroid'), "#p-#{p.id}", :role=>"button", "data-toggle"=>"modal"
+      .modal.hide.fade{:id=>"p-#{p.id}", :tabindex=>"-1", :role=>"dialog", "aria-labelledby"=>"p-#{p.id}Label", "aria-hidden"=>"true"}
+        .modal-header
+          .modal_img
+            =image_tag p.payload.url
+
 
 =link_to "Back to "+@name, @observable, :class=>'btn'
 

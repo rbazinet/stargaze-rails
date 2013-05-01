@@ -56,6 +56,7 @@
     %hr
       -if current_user
         =link_to "Add observation", new_addable_observation_path(:observable_id=>@messier, :observable_type=>@messier.class), :class=>'btn'
+        #votes=render 'shared/favs'
       =link_to "Back to "+@messier.constellation.name, @messier.constellation, :class=>'btn'
 
 %hr

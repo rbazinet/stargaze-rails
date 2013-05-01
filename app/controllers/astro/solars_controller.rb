@@ -7,6 +7,7 @@ module Astro
     end
     def show
       @solar=Astro::Solar.find(params[:id])
+      @votable=@solar
     end
   end
 end
