@@ -35,7 +35,7 @@
       %p=@solar.info
 %hr
 .row
-PHOTOS
+  =render 'shared/photos', :object=>@solar
 .row
   .span12
     %table.table.table-striped.table-hover
@@ -62,8 +62,8 @@ PHOTOS
             %td=o.observation_date
     %hr
       -if current_user
-        =link_to "Add observation", new_addable_observation_path(:observable_id=>@solar, :observable_type=>@solar.class), :class=>'btn'
-        #votes=render 'shared/favs'
+        =link_to "Add observation", new_addable_observation_path(:observable_id=>@solar, :observable_type=>@solar.class), :class=>'btn left'
+        #votes.left=render 'shared/favs'
 
 %hr
 .row

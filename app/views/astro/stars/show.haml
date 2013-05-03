@@ -27,7 +27,7 @@
         Stellar class:
       =@star.stellar_class
   .span8
-    PHOTOS
+    =render 'shared/photos', :object=>@star
 .row
   .span12
     %table.table.table-striped.table-hover
@@ -54,9 +54,9 @@
             %td=o.observation_date
     %hr
       -if current_user
-        =link_to "Add observation", new_addable_observation_path(:observable_id=>@star, :observable_type=>@star.class), :class=>'btn'
-        #votes=render 'shared/favs'
-      =link_to "Back to "+@star.constellation.name, @star.constellation, :class=>'btn'
+        =link_to "Add observation", new_addable_observation_path(:observable_id=>@star, :observable_type=>@star.class), :class=>'btn left'
+        #votes.left=render 'shared/favs'
+      =link_to "Back to "+@star.constellation.name, @star.constellation, :class=>'btn left'
 
 %hr
 .row

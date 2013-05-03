@@ -8,7 +8,7 @@
   $(document).ready(
     function(){
       $('#vote_trigger').bind('ajax:complete', function(evt, data, status, xhr){
-          $('#votes').html(data.responseText);
+          $('#votes.left').html(data.responseText);
         });
     }
   );

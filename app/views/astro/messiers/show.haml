@@ -28,7 +28,7 @@
         Apparent magnitude:
       =@messier.apparent_magnitude
   .span8
-    PHOTOS
+    =render 'shared/photos', :object=>@messier
 .row
   .span12
     %table.table.table-striped.table-hover
@@ -55,9 +55,9 @@
             %td=o.observation_date
     %hr
       -if current_user
-        =link_to "Add observation", new_addable_observation_path(:observable_id=>@messier, :observable_type=>@messier.class), :class=>'btn'
-        #votes=render 'shared/favs'
-      =link_to "Back to "+@messier.constellation.name, @messier.constellation, :class=>'btn'
+        =link_to "Add observation", new_addable_observation_path(:observable_id=>@messier, :observable_type=>@messier.class), :class=>'btn left'
+        #votes.left=render 'shared/favs'
+      =link_to "Back to "+@messier.constellation.name, @messier.constellation, :class=>'btn left'
 
 %hr
 .row

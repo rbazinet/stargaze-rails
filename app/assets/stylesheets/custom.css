@@ -31,6 +31,7 @@ body{
 
 .obs_images{
   height: 80px;
+  margin-bottom: 10px;
 }
 
 .obs_img{
@@ -43,3 +44,18 @@ body{
 .modal_img{
   text-align: center;
 }
+
+.comment_button{
+  margin-top:-11px;
+}
+
+.left{
+  float:left;
+  margin-right: 15px;
+}
+
+.comment{width:95%;margin:20px;}
+.comment .comment-user{float:left;height:20px;}
+.comment .comment-date{float:right;height:20px;}
+.comment .comment-head{height:20px;margin-bottom:7px;}
+.comment .comment-comment{margin-left:15px;}

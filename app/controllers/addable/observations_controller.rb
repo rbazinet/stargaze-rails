@@ -9,6 +9,7 @@ module Addable
       @observation=Addable::Observation.find(params[:id])
       @observable=@observation.observable_type.constantize.find(@observation.observable_id)
       get_name
+      @votable=@observation
     end
 
     def new 
@@ -16,7 +17,6 @@ module Addable
     end
 
     def create
-      puts params
       @observation=@observable.observations.new(params[:addable_observation])
       @observation.user=current_user
       if @observation.save

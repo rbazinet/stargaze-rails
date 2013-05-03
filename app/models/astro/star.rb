@@ -9,5 +9,9 @@ module Astro
 
     has_many :observations, :as=>:observable, :class_name=>"Addable::Observation"
     has_many :photos, :through=>:observations
+
+    def get_name
+      return self.name
+    end
   end
 end

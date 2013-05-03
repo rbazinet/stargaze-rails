@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :provider, :uid, :name
   # attr_accessible :title, :body
 
-  has_many :observations, :class_name=>"User::Observation"
+  has_many :observations, :class_name=>"Addable::Observation"
   has_many :photos, :class_name=>"User::Photos", :through=>:observations
   has_many :comments, :class_name=>"Comment"
 

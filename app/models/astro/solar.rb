@@ -11,5 +11,9 @@ module Astro
     validates :name, :position, :size, :size_earth, :mass, :mass_earth, :distance, :distance_earth, :orbital_period, :trading_period, :moons, :solar_type, :presence=>true
     validates :name, :uniqueness=>true
     validates :position, :size, :size_earth, :mass, :mass_earth, :distance, :distance_earth, :orbital_period, :moons, :numericality=>true
+
+    def get_name
+      return self.name
+    end
   end
 end

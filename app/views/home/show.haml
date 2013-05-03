@@ -1,0 +1,65 @@
+%h1
+  =@user.get_name
+  profile
+%hr
+.row
+  .span12
+    %table.table.table-striped.table-hover
+      %caption
+        %h4
+          List of user's observations
+      %thead
+        %tr
+          %td 
+            %strong Object
+          %td 
+            %strong Name
+          %td 
+            %strong Date
+      %tbody
+        -@user.observations.each do |o|
+          -object=o.observable_type.constantize.find(o.observable_id)
+          %tr
+            %td=link_to object.get_name, object
+            %td=link_to o.name, addable_observation_path(o.id)
+            %td=o.observation_date
+%hr
+.row
+  %h4.text-center 
+    User favourites
+  .span2
+    %h6 
+      Solars
+    %ul
+    -@user.get_up_voted(Astro::Solar).each do |v|
+      %li=link_to v.get_name, v
+  .span2
+    %h6 
+      Constellations
+    %ul
+    -@user.get_up_voted(Astro::Constellation).each do |v|
+      %li=link_to v.get_name, v
+  .span2
+    %h6 
+      Stars
+    %ul
+    -@user.get_up_voted(Astro::Star).each do |v|
+      %li=link_to v.get_name, v
+  .span2
+    %h6 
+      NGCs
+    %ul
+    -@user.get_up_voted(Astro::Ngc).each do |v|
+      %li=link_to v.get_name, v
+  .span2
+    %h6 
+      Messiers
+    %ul
+    -@user.get_up_voted(Astro::Messier).each do |v|
+      %li=link_to v.get_name, v
+  .span2
+    %h6 
+      Observations
+    %ul
+    -@user.get_up_voted(Addable::Observation).each do |v|
+      %li=link_to v.name, v

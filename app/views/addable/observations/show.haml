@@ -4,6 +4,9 @@
   =@name
 %hr
 
+.muted Observed by:
+.obs=link_to @observation.user.get_name, user_home_path(@observation.user.id)
+%br
 .muted Observed on:
 .obs=@observation.observation_date
 %br
@@ -27,8 +30,10 @@
         .modal-header
           .modal_img
             =image_tag p.payload.url
-
-
-=link_to "Back to "+@name, @observable, :class=>'btn'
-
-=render 'shared/comments', :commentable=>@observation
+%hr
+.row
+  #votes.left=render 'shared/favs'
+  =link_to "Back to "+@name, @observable, :class=>'btn left'
+%hr
+.row
+  =render 'shared/comments', :commentable=>@observation

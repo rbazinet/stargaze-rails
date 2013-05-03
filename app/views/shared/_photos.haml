@@ -1,0 +1,11 @@
+.obs.obs_images
+  -if object.photos.count==0
+    There are no photos, for this object
+  -else
+    -object.photos.take(5).each do |p|
+      .obs_img
+        =link_to image_tag(p.payload.url(:thumb), :class=>'img-polaroid'), "#p-#{p.id}", :role=>"button", "data-toggle"=>"modal"
+        .modal.hide.fade{:id=>"p-#{p.id}", :tabindex=>"-1", :role=>"dialog", "aria-labelledby"=>"p-#{p.id}Label", "aria-hidden"=>"true"}
+          .modal-header
+            .modal_img
+              =image_tag p.payload.url

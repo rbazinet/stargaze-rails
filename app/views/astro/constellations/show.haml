@@ -43,18 +43,13 @@
             Name meaning:
           =@constellation.meaning
         .span8
-          .obs.obs_images
-            -@constellation.photos.first(4) do |p|
-              .obs_img
-                =link_to image_tag(p.payload.url(:thumb), :class=>'img-polaroid'), "#p-#{p.id}", :role=>"button", "data-toggle"=>"modal"
-                .modal.hide.fade{:id=>"p-#{p.id}", :tabindex=>"-1", :role=>"dialog", "aria-labelledby"=>"p-#{p.id}Label", "aria-hidden"=>"true"}
-                  .modal-header
-                    .modal_img
-                      =image_tag p.payload.url            
+          =render 'shared/photos', :object=>@constellation
 
       %hr
       =render 'shared/comments', :commentable=>@constellation
-      #votes=render 'shared/favs'
+      #votes.left=render 'shared/favs'
+      -if current_user
+        =link_to "Add observation", new_addable_observation_path(:observable_id=>@constellation, :observable_type=>@constellation.class), :class=>'btn left'
       
     #tab2.tab-pane
       %table.table.table-striped.table-hover

@@ -1,20 +1,23 @@
 .row_fluid 
   .comments
+    %strong Comments:
     -if commentable.comments.count == 0
       Sorry, the are no comments!
     -else
       -commentable.comments.each do |c|
         .comment
-          .comment-user=c.user.get_name
-          .comment-date=c.created_at
+          .comment-head
+            .comment-user=link_to c.user.get_name, user_home_path(c.user.id)
+            .comment-date=c.created_at
           .comment-comment=c.comment
+        %hr
           
   .new-comment
     -if current_user
       =form_for Comment.new do |f|
         =f.label :comment
-        =f.text_area :comment, :rows=>3
+        =f.text_area :comment, :rows=>'1' 
         = hidden_field_tag :commentable_type, commentable.class
         = hidden_field_tag :commentable_id, commentable.id
         =f.hidden_field :user_id, :value=>current_user.id
-        =f.submit "Send!", :class=>'btn'
+        =f.submit "Send!", :class=>'comment_button btn'

@@ -13,5 +13,9 @@ module Astro
     has_many :photos, :through=>:observations
 
     validate :name, :uniqueness=>true
+
+    def get_name
+      return self.name
+    end
   end
 end
