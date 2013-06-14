@@ -13,5 +13,6 @@ module Astro
     def get_name
       return self.name
     end
+
   end
 end
