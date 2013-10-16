@@ -5,7 +5,6 @@ gem 'rails', '3.2.14'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
 gem 'haml'
 gem 'jquery-rails'
 gem 'thin'
@@ -21,6 +20,13 @@ gem 'plupload-rails3'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+end
+
+group :development, :test do
+  gem 'mysql2'
+end
+group :production do
+  gem 'pg'
 end
 
 # Gems used only for assets and not required
