@@ -56,6 +56,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     daemons (1.1.9)
+    dalli (2.6.4)
     debug_inspector (0.0.2)
     devise (3.1.1)
       bcrypt-ruby (~> 3.0)
@@ -84,6 +85,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    memcachier (0.0.2)
     mime-types (1.25)
     multi_json (1.8.2)
     multipart-post (1.2.0)
@@ -126,6 +128,11 @@ GEM
       activesupport (= 3.2.14)
       bundler (~> 1.0)
       railties (= 3.2.14)
+    rails_12factor (0.0.2)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.1)
+    rails_stdout_logging (0.0.3)
     railties (3.2.14)
       actionpack (= 3.2.14)
       activesupport (= 3.2.14)
@@ -174,9 +181,11 @@ DEPENDENCIES
   binding_of_caller
   ckeditor
   coffee-rails (~> 3.2.1)
+  dalli
   devise
   haml
   jquery-rails
+  memcachier
   mysql2
   omniauth
   omniauth-facebook
@@ -184,6 +193,7 @@ DEPENDENCIES
   pg
   plupload-rails3
   rails (= 3.2.14)
+  rails_12factor
   sass-rails (~> 3.2.3)
   thin
   uglifier (>= 1.0.3)
