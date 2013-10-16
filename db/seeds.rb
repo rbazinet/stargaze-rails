@@ -164,7 +164,7 @@ open("http://en.wikipedia.org/w/api.php?format=xml&action=parse&page=List_of_NGC
     n.right_ascension=c[3].gsub!(" ", "")
     n.declination=c[4].gsub!(" ", "")
     n.apparent_magnitude=c[5]
-    n.save
+    n.save if n.ngc_number.present?
   end
 end
 

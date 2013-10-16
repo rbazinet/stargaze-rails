@@ -17,3 +17,4 @@ pickle-email-*.html
 
 .zeus-socket
 .DS_Store
+.powrc
